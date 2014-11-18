@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+	<ui:composition template="/template/template.xhtml">
+		
+        
+		<ui:define name="content">
+              
+              <ui:include src="/pages/protected/agenda/filtroAgenda.xhtml"/>
+              
+              <p:tabView id="tabViewAgenda" prependId="false" dynamic="true" cache="true" style="margin-top:20px;" >
+              	
+       			<p:tab title="Agenda" >
+       				<p:messages id="mensagens"/>
+              		<ui:include src="/pages/protected/agenda/schedule.xhtml" />               
+                </p:tab>
+                
+                <p:tab title="Lista de Eventos">
+       				<ui:include src="/pages/protected/agenda/gridEventos.xhtml" />
+       			</p:tab>
+                </p:tabView>
+				
+    		
+        
+		</ui:define>
+	</ui:composition>
+	
+</h:body>
+</html>
